@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>image-to-campaign — Quickstart</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f7f6f3;
+    --ink: #16151c;
+    --muted: #57545f;
+    --accent: #4f46e5;
+    --line: #e4e1da;
+  }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    background: #fff;
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  .page { width: 210mm; min-height: 297mm; margin: 0 auto; background: var(--bg); }
+
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 12mm 18mm 10mm;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: "";
+    position: absolute; right: -40mm; top: -40mm;
+    width: 90mm; height: 90mm; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%);
+    opacity: .55;
+  }
+  .eyebrow {
+    font-size: 9pt; letter-spacing: .32em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 4mm;
+  }
+  h1 { font-size: 34pt; letter-spacing: -.5pt; line-height: 1.02; }
+  .accent-dot { color: var(--accent); }
+  .sub {
+    margin-top: 4mm; max-width: 150mm; font-size: 12pt; color: #d6d4e0;
+  }
+  .prereq {
+    margin-top: 6mm; font-size: 9.5pt; color: #b9b6c6;
+    border-left: 2px solid var(--accent); padding-left: 4mm;
+  }
+
+  main { padding: 6mm 18mm 0; }
+  .step {
+    display: flex; gap: 6mm; padding: 2.4mm 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .num {
+    flex: 0 0 12mm; height: 12mm; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: 16pt; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-body h2 { font-size: 14pt; margin-bottom: 2mm; }
+  .step-body p { font-size: 10.5pt; color: var(--muted); margin-bottom: 2mm; }
+  .cmd {
+    display: inline-block; margin-top: 1mm;
+    background: #2a2833; color: #eceaf5;
+    font-family: "Cascadia Code", "Consolas", monospace; font-size: 9pt;
+    padding: 2.5mm 4mm; border-radius: 2mm; line-height: 1.45;
+  }
+  a { color: var(--accent); text-decoration: none; font-weight: 600; word-break: break-all; }
+  .hint { font-size: 9pt; color: #8b8893; font-style: italic; }
+
+  .get {
+    margin: 5mm 18mm 0; padding: 4.5mm 7mm;
+    background: #fff; border: 1px solid var(--line); border-radius: 3mm;
+    display: flex; align-items: center; gap: 6mm;
+  }
+  .get .label { flex: 0 0 auto; white-space: nowrap; font-size: 8.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .get .items { font-size: 11pt; font-weight: 600; }
+  .get .items span { color: var(--muted); font-weight: 400; }
+
+  .community {
+    margin: 5mm 18mm 0; padding: 5mm 7mm;
+    background: var(--ink); border-radius: 3mm;
+    display: flex; align-items: center; gap: 6mm;
+    color: #fff; text-decoration: none;
+    position: relative; overflow: hidden;
+  }
+  .community::after {
+    content: ""; position: absolute; right: -30mm; top: -30mm;
+    width: 70mm; height: 70mm; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%);
+    opacity: .5;
+  }
+  .community .label {
+    flex: 0 0 auto; font-size: 8.5pt; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--accent); font-weight: 700;
+  }
+  .community .ctext { font-size: 11pt; line-height: 1.4; word-break: normal; }
+  .community .ctext b { color: #fff; }
+  .community .ctext .url { color: #b9b6c6; font-weight: 600; font-size: 9.5pt; }
+
+  footer {
+    margin-top: 5mm; padding: 4mm 18mm;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 8.5pt; color: #8b8893;
+  }
+  footer b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="eyebrow">Coding-Agent Skill · Claude Code · Codex · &amp; Co.</div>
+    <h1>image&#8209;to&#8209;campaign<span class="accent-dot">.</span></h1>
+    <p class="sub">From <b style="color:#fff">one product image</b> to a complete marketing campaign —
+      landing page, 3 Instagram Reels and a blog article, all in one consistent look.</p>
+    <p class="prereq">All you need: a coding agent (Claude Code, Codex, Cline, OpenCode …)
+      and a Higgsfield account with credits.</p>
+  </header>
+
+  <main>
+    <div class="step">
+      <div class="num">1</div>
+      <div class="step-body">
+        <h2>Get a Higgsfield account</h2>
+        <p>Higgsfield generates every image and video. Create your account (credits required)
+          and log in there:</p>
+        <p><a href="https://higgsfield.ai/s/mcp-arnold-oberleiter-ecZvus">higgsfield.ai/s/mcp-arnold-oberleiter-ecZvus</a></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="step-body">
+        <h2>Clone the repo &amp; ask your agent</h2>
+        <p>Tell your coding agent, word for word:</p>
+        <span class="cmd">"Clone the repo https://github.com/Arnie936/image-to-campaign-en into my<br>skills folder and tell me what I need to do next."</span>
+        <p style="margin-top:3mm">The skill installs the Higgsfield CLI itself and walks you through the login —
+          nothing to hunt down by hand.</p>
+        <p class="hint">Optional but recommended: install the Higgsfield companion skills first (better asset quality).</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="step-body">
+        <h2>Image in → campaign out</h2>
+        <p>Give the agent a product image and say:</p>
+        <span class="cmd">"Turn this image into a complete campaign."</span>
+        <p style="margin-top:3mm">First you get a <b>Brand Brief to approve</b> (no credits spent yet).
+          After your OK the agent builds everything on its own and saves it in one campaign folder.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="get">
+    <div class="label">What you get</div>
+    <div class="items">Landing page&nbsp;&nbsp;·&nbsp;&nbsp;3 Reels (9:16) + captions&nbsp;&nbsp;·&nbsp;&nbsp;Blog article
+      &nbsp;&nbsp;<span>— one identity, one funnel</span></div>
+  </div>
+
+  <a class="community" href="https://www.skool.com/ai-mit-arnie-ki-revolution">
+    <div class="label">Learn&nbsp;more</div>
+    <div class="ctext">Want personal support and complete courses?
+      <b>Come check it out →</b>
+      <span class="url">skool.com/ai-mit-arnie-ki-revolution</span></div>
+  </a>
+
+  <footer>
+    <div>Repo: <b>github.com/Arnie936/image-to-campaign-en</b></div>
+    <div>MIT license · by Arnold Oberleiter</div>
+  </footer>
+</div>
+</body>
+</html>

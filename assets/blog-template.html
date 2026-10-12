@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}" />
+  <!-- Replace with the brief's fonts (same as the landing page) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family={{DISPLAY_FONT}}&family={{BODY_FONT}}&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Same OKLCH tokens as the landing page — pulled from brief.md */
+      --bg: {{BG}};
+      --ink: {{INK}};
+      --muted: {{MUTED}};
+      --accent: {{ACCENT}};
+      --display: "{{DISPLAY_FONT}}", serif;
+      --body: "{{BODY_FONT}}", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 7vh 6vw 14vh; }
+    .eyebrow {
+      font-size: .8rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.2rem;
+    }
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08; margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin: 2.6rem 0 .8rem;
+    }
+    p { color: var(--muted); margin-bottom: 1.1rem; }
+    .lead { font-size: 1.15rem; color: var(--ink); }
+    .hero-img {
+      width: 100%; height: auto; border-radius: 14px;
+      margin: 1.5rem 0 2.5rem; display: block;
+    }
+    .cta {
+      display: inline-block; margin-top: 2.5rem;
+      padding: .95rem 1.8rem; border-radius: 999px;
+      background: var(--accent); color: var(--bg);
+      font-weight: 600; text-decoration: none;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .cta:hover { transform: translateY(-2px); opacity: .92; }
+    @media (max-width: 520px) { .wrap { padding: 5vh 7vw 10vh; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Journal</p>
+    <h1>{{TITLE}}</h1>
+    <img class="hero-img" src="{{HERO_IMG}}" alt="{{HERO_ALT}}" />
+    <!-- Article body as semantic HTML: <p class="lead">…</p>, <h2>…</h2>, <p>…</p> -->
+    {{CONTENT}}
+    <a class="cta" href="{{LANDING_URL}}">{{CTA_TEXT}}</a>
+  </main>
+</body>
+</html>

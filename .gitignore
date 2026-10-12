@@ -1,0 +1,21 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs / crash dumps
+*.log
+*.stackdump
+
+# Campaign output (if the skill is ever run from inside this repo)
+campaign-*/
+kampagne-*/
+
+# Node (in case a generated landing page pulls in tooling)
+node_modules/
